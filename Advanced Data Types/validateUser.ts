@@ -1,4 +1,4 @@
-type User = {
+type User1 = {
 id: number | string,
 username: string,
 passwordHash: string | string[],
@@ -6,7 +6,7 @@ status: 'Locked' | 'Unlocked' | 'Deleted',
 email?: string
 }
 
-function isUser(user: unknown): user is User {
+function isUser(user: unknown): user is User1 {
     return user != undefined && typeof user === 'object' &&
         'id' in user && 
         ((typeof user.id === 'number' && user.id > 100) || (typeof user.id === 'string' && user.id.length === 14)) &&
